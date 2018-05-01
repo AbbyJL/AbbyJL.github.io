@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AbbyJL">
 <meta property="og:description" content="JavaScript 有六中数据类型五种基本数据类型null undefined boolean string number一种复杂数据类型  object不区分 整点数和浮点数，都是用number表示 JavaScript变量分为两种：基本类型和引用类型其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。 ✦ 基本类型：在内存中占据实际大小">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T13:28:31.877Z">
+<meta property="og:updated_time" content="2018-04-27T14:03:27.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript知识点">
 <meta name="twitter:description" content="JavaScript 有六中数据类型五种基本数据类型null undefined boolean string number一种复杂数据类型  object不区分 整点数和浮点数，都是用number表示 JavaScript变量分为两种：基本类型和引用类型其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。 ✦ 基本类型：在内存中占据实际大小">
@@ -303,10 +303,11 @@
         <h3 id="JavaScript-有六中数据类型"><a href="#JavaScript-有六中数据类型" class="headerlink" title="JavaScript 有六中数据类型"></a>JavaScript 有六中数据类型</h3><p>五种基本数据类型<br>null undefined boolean string number<br>一种复杂数据类型  object<br>不区分 整点数和浮点数，都是用number表示</p>
 <h3 id="JavaScript变量分为两种：基本类型和引用类型"><a href="#JavaScript变量分为两种：基本类型和引用类型" class="headerlink" title="JavaScript变量分为两种：基本类型和引用类型"></a>JavaScript变量分为两种：基本类型和引用类型</h3><p>其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。</p>
 <p>✦ 基本类型：在内存中占据实际大小的空间，赋值的时候，会在内存中创建一份新的副本。保存在栈内存中。<br>✦ 引用类型：指向对象的指针而不是对象本身，赋值的时候，只是创建了一个新的指针指向对象。保存在堆内存中。<br>一句话就是，基本类型在内存中是实际的值；而引用类型在内存中就是一个指针，指向一个对象，多个引用类型可能同时指向同一个对象。<br>如果我们希望获取一个对象是否是数组，或判断某个变量是否是某个对象的实例则要选择使用instanceof。instanceof用于判断一个变量是否某个对象的实例</p>
-<p>那么，如何确定某个变量是哪种数据类型呢？<br>确定一个变量是哪种基本类型用typeof操作符<br>typeof一般只能返回如下几个结果：number,boolean,string,function,object,undefined。</p>
+<p>那么，如何确定某个变量是哪种数据类型呢？<br>确定一个变量是哪种基本类型用typeof操作符<br>typeof一般只能返回如下几个结果：number,boolean,string,function,object,undefined。<br>确定一个变量是哪种引用类型用instanceof操作符<br>null要用instanceof</p>
 <p>‘’‘<br>function add(x,y){<br>    console.log(arguments.length)//3<br>    console.log(add.length);//2<br>}<br>’‘’</p>
 <h3 id="在函数内部，有两个特殊的对象arguments和this"><a href="#在函数内部，有两个特殊的对象arguments和this" class="headerlink" title="在函数内部，有两个特殊的对象arguments和this"></a>在函数内部，有两个特殊的对象arguments和this</h3><p>arguments是一个类似数组（但不是数组）的对象，用于保存函数的参数,即使函数定义时没有定义参数，arguments也会保存实际调用时使用的参数<br>this表示当前函数执行的环境对象的引用</p>
 <h3 id="函数包含三个属性length和prototype和name"><a href="#函数包含三个属性length和prototype和name" class="headerlink" title="函数包含三个属性length和prototype和name"></a>函数包含三个属性length和prototype和name</h3><p>add.length表示希望接收的参数个数，而不是实际接收的<br>add.prototype保存了引用类型的所有实例方法（tostring（），valueOf（）等等），在ES5中，prototype属性是无法枚举的,这个属性指向一个对象的引用，这个对象叫做原型对象<br>add.name=’add’ 通过这个属性可以访问到给定函数指定的名字，这个属性的值永远等于跟在function关键字后面的标识符，匿名函数的name属性为空</p>
+<h3 id="函数包含两个非继承而来的方法apply-和call"><a href="#函数包含两个非继承而来的方法apply-和call" class="headerlink" title="函数包含两个非继承而来的方法apply()和call()"></a>函数包含两个非继承而来的方法apply()和call()</h3><p>这两个方法的作用都是在特定的作用域中调用函数,实际上等于设置函数体内this对象的值<br>apply方法可以接收两个参数，一个是在其中运行函数的作用域，另一个是参数数组(可以没有)，参数数组可以是Array的实例，也可以是arguments对象<br>call方法和apply方法作用相同，但接收参数的方式不同，call第二个参数只能是函数参数的数组形式，也就是说第二个参数必须一个一个列出来</p>
 
       
     </div>
@@ -457,7 +458,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-有六中数据类型"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 有六中数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript变量分为两种：基本类型和引用类型"><span class="nav-number">2.</span> <span class="nav-text">JavaScript变量分为两种：基本类型和引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在函数内部，有两个特殊的对象arguments和this"><span class="nav-number">3.</span> <span class="nav-text">在函数内部，有两个特殊的对象arguments和this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数包含三个属性length和prototype和name"><span class="nav-number">4.</span> <span class="nav-text">函数包含三个属性length和prototype和name</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-有六中数据类型"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 有六中数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript变量分为两种：基本类型和引用类型"><span class="nav-number">2.</span> <span class="nav-text">JavaScript变量分为两种：基本类型和引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在函数内部，有两个特殊的对象arguments和this"><span class="nav-number">3.</span> <span class="nav-text">在函数内部，有两个特殊的对象arguments和this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数包含三个属性length和prototype和name"><span class="nav-number">4.</span> <span class="nav-text">函数包含三个属性length和prototype和name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数包含两个非继承而来的方法apply-和call"><span class="nav-number">5.</span> <span class="nav-text">函数包含两个非继承而来的方法apply()和call()</span></a></li></ol></div>
             
 
           </div>
