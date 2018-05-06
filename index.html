@@ -233,138 +233,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/2018003/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyJL">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyJL">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/2018003/" itemprop="url">JavaScript知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T17:06:00+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="JavaScript-有六种数据类型"><a href="#JavaScript-有六种数据类型" class="headerlink" title="JavaScript 有六种数据类型"></a>JavaScript 有六种数据类型</h3><p>五种基本数据类型<br>null undefined boolean string number<br>一种复杂数据类型  object<br>不区分 整点数和浮点数，都是用number表示</p>
-<h3 id="JavaScript变量分为两种：基本类型和引用类型"><a href="#JavaScript变量分为两种：基本类型和引用类型" class="headerlink" title="JavaScript变量分为两种：基本类型和引用类型"></a>JavaScript变量分为两种：基本类型和引用类型</h3><p>其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。</p>
-<p>✦ 基本类型：在内存中占据实际大小的空间，赋值的时候，会在内存中创建一份新的副本。保存在栈内存中。<br>✦ 引用类型：指向对象的指针而不是对象本身，赋值的时候，只是创建了一个新的指针指向对象。保存在堆内存中。<br>一句话就是，基本类型在内存中是实际的值；而引用类型在内存中就是一个指针，指向一个对象，多个引用类型可能同时指向同一个对象。<br>如果我们希望获取一个对象是否是数组，或判断某个变量是否是某个对象的实例则要选择使用instanceof。instanceof用于判断一个变量是否某个对象的实例</p>
-<p>那么，如何确定某个变量是哪种数据类型呢？<br>确定一个变量是哪种基本类型用typeof操作符<br>typeof一般只能返回如下几个结果：number,boolean,string,function,object,undefined。<br>确定一个变量是哪种引用类型用instanceof操作符<br>null要用instanceof</p>
-<!-- ‘’‘
-function add(x,y){
-    console.log(arguments.length)//3
-    console.log(add.length);//2
-}
-’‘’ -->
-<h3 id="在函数内部，有两个特殊的对象arguments和this"><a href="#在函数内部，有两个特殊的对象arguments和this" class="headerlink" title="在函数内部，有两个特殊的对象arguments和this"></a>在函数内部，有两个特殊的对象arguments和this</h3><p>arguments是一个类似数组（但不是数组）的对象，用于保存函数的参数,即使函数定义时没有定义参数，arguments也会保存实际调用时使用的参数<br>this表示当前函数执行的环境对象的引用</p>
-<h3 id="函数包含三个属性length和prototype和name"><a href="#函数包含三个属性length和prototype和name" class="headerlink" title="函数包含三个属性length和prototype和name"></a>函数包含三个属性length和prototype和name</h3><p>add.length表示希望接收的参数个数，而不是实际接收的<br>add.prototype保存了引用类型的所有实例方法（tostring（），valueOf（）等等），在ES5中，prototype属性是无法枚举的,这个属性指向一个对象的引用，这个对象叫做原型对象<br>add.name=’add’ 通过这个属性可以访问到给定函数指定的名字，这个属性的值永远等于跟在function关键字后面的标识符，匿名函数的name属性为空</p>
-<h3 id="函数包含两个非继承而来的方法apply-和call"><a href="#函数包含两个非继承而来的方法apply-和call" class="headerlink" title="函数包含两个非继承而来的方法apply()和call()"></a>函数包含两个非继承而来的方法apply()和call()</h3><p>这两个方法的作用都是在特定的作用域中调用函数,实际上等于设置函数体内this对象的值<br>apply方法可以接收两个参数，一个是在其中运行函数的作用域，另一个是参数数组(可以没有)，参数数组可以是Array的实例，也可以是arguments对象<br>call方法和apply方法作用相同，但接收参数的方式不同，call第二个参数只能是函数参数的数组形式，也就是说第二个参数必须一个一个列出来</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/2018002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -439,6 +307,138 @@ function add(x,y){
             <h2 id="原生对象"><a href="#原生对象" class="headerlink" title="原生对象"></a>原生对象</h2><p>ECMA-262 把本地对象（native object）定义为“独立于宿主环境的 ECMAScript实现提供的对象”。 “本地对象”包含哪些内容：Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError。 由此可以看出，简单来说，本地对象就是 ECMA-262 定义的类（引用类型）。</p>
 <h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><p>ECMA-262 把内置对象（built-in object）定义为“由 ECMAScript实现提供的、独立于宿主环境的所有对象，在 ECMAScript程序开始执行时出现”。这意味着开发者不必明确实例化内置对象，它已被实例化了。 同样是“独立于宿主环境”。根据定义我们似乎很难分清“内置对象”与“本地对象”的区别。而ECMA-262 只定义了两个内置对象，即 Global 和 Math （它们也是本地对象，根据定义，每个内置对象都是本地对象）。如此就可以理解了。内置对象是本地对象的一种。</p>
 <h2 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h2><p>何为“宿主对象”？主要在这个“宿主”的概念上，ECMAScript中的“宿主”当然就是我们网页的运行环境，即“操作系统”和“浏览器”。 所有非本地对象都是宿主对象（host object），即由 ECMAScript实现的宿主环境提供的对象。所有的BOM和DOM都是宿主对象。因为其对于不同的“宿主”环境所展示的内容不同。其实说白了就是，ECMAScript官方未定义的对象都属于宿主对象，因为其未定义的对象大多数是自己通过ECMAScript程序创建的对象。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/2018003/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AbbyJL">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AbbyJL">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/2018003/" itemprop="url">笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T17:06:00+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript-有六种数据类型"><a href="#JavaScript-有六种数据类型" class="headerlink" title="JavaScript 有六种数据类型"></a>JavaScript 有六种数据类型</h3><p>五种基本数据类型<br>null undefined boolean string number<br>一种复杂数据类型  object<br>不区分 整点数和浮点数，都是用number表示</p>
+<h3 id="JavaScript变量分为两种：基本类型和引用类型"><a href="#JavaScript变量分为两种：基本类型和引用类型" class="headerlink" title="JavaScript变量分为两种：基本类型和引用类型"></a>JavaScript变量分为两种：基本类型和引用类型</h3><p>其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。</p>
+<p>✦ 基本类型：在内存中占据实际大小的空间，赋值的时候，会在内存中创建一份新的副本。保存在栈内存中。<br>✦ 引用类型：指向对象的指针而不是对象本身，赋值的时候，只是创建了一个新的指针指向对象。保存在堆内存中。<br>一句话就是，基本类型在内存中是实际的值；而引用类型在内存中就是一个指针，指向一个对象，多个引用类型可能同时指向同一个对象。<br>如果我们希望获取一个对象是否是数组，或判断某个变量是否是某个对象的实例则要选择使用instanceof。instanceof用于判断一个变量是否某个对象的实例</p>
+<p>那么，如何确定某个变量是哪种数据类型呢？<br>确定一个变量是哪种基本类型用typeof操作符<br>typeof一般只能返回如下几个结果：number,boolean,string,function,object,undefined。<br>确定一个变量是哪种引用类型用instanceof操作符<br>null要用instanceof</p>
+<!-- ‘’‘
+function add(x,y){
+    console.log(arguments.length)//3
+    console.log(add.length);//2
+}
+’‘’ -->
+<h3 id="在函数内部，有两个特殊的对象arguments和this"><a href="#在函数内部，有两个特殊的对象arguments和this" class="headerlink" title="在函数内部，有两个特殊的对象arguments和this"></a>在函数内部，有两个特殊的对象arguments和this</h3><p>arguments是一个类似数组（但不是数组）的对象，用于保存函数的参数,即使函数定义时没有定义参数，arguments也会保存实际调用时使用的参数<br>this表示当前函数执行的环境对象的引用</p>
+<h3 id="函数包含三个属性length和prototype和name"><a href="#函数包含三个属性length和prototype和name" class="headerlink" title="函数包含三个属性length和prototype和name"></a>函数包含三个属性length和prototype和name</h3><p>add.length表示希望接收的参数个数，而不是实际接收的<br>add.prototype保存了引用类型的所有实例方法（tostring（），valueOf（）等等），在ES5中，prototype属性是无法枚举的,这个属性指向一个对象的引用，这个对象叫做原型对象<br>add.name=’add’ 通过这个属性可以访问到给定函数指定的名字，这个属性的值永远等于跟在function关键字后面的标识符，匿名函数的name属性为空</p>
+<h3 id="函数包含两个非继承而来的方法apply-和call"><a href="#函数包含两个非继承而来的方法apply-和call" class="headerlink" title="函数包含两个非继承而来的方法apply()和call()"></a>函数包含两个非继承而来的方法apply()和call()</h3><p>这两个方法的作用都是在特定的作用域中调用函数,实际上等于设置函数体内this对象的值<br>apply方法可以接收两个参数，一个是在其中运行函数的作用域，另一个是参数数组(可以没有)，参数数组可以是Array的实例，也可以是arguments对象<br>call方法和apply方法作用相同，但接收参数的方式不同，call第二个参数只能是函数参数的数组形式，也就是说第二个参数必须一个一个列出来</p>
 
           
         
