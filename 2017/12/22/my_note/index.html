@@ -79,18 +79,15 @@
 
 
 
-<meta name="description" content="随手记">
 <meta name="keywords" content="front-end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="个人笔记">
 <meta property="og:url" content="http://yoursite.com/2017/12/22/my_note/index.html">
 <meta property="og:site_name" content="AbbyJL">
-<meta property="og:description" content="随手记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T06:19:32.009Z">
+<meta property="og:updated_time" content="2018-05-01T06:21:06.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人笔记">
-<meta name="twitter:description" content="随手记">
 
 
 
@@ -300,7 +297,170 @@
       
 
       
-        
+        <!-- #### 1.一个HTML页面是怎么样从代码变成我们看到的样子的，CSS和JavaScript的放置位置是怎样的，为什么CSS要在头部，JavaScript要在尾部？有没有遇到过要把JavaScript放在头部的情况？ 如果页面加载的过程中CSS一直没有加载到，页面上会呈现html吗？(头条，有赞)
+
+浏览器向服务器发起HTTP请求
+收到响应。解析Header后拿到Body
+解析HTML，构建DOM树。构建的同时对每个DOM节点挂载相应的CSS属性
+顺序执行script标签
+渲染DOM树
+
+2.什么是reflow(回流)和repaint(重绘)，回流一定会引起重绘吗？(趣店)
+
+3.react的生命周期？渲染流程？(有赞，趣店，美图)
+
+#### 4.跨域的解决方法有哪些，使用场景分别是怎么样的，jsonp有什么限制吗? 
+
+#### 5.ES6有哪些新特性？介绍一下箭头函数。var,let,const的区别是什么，说越多越好？(高频)
+
+6.让你画一个十字架，你会怎么实现？(美团)
+
+7.java的开发模式有了解什么，比如单例模式？(美团)
+
+8.什么是深拷贝和浅拷贝？如何实现深拷贝？如何深拷贝一个数组？可以用concat方法，以及.......方法？(美团)
+
+9.map和forEach的使用场景有什么区别？(趣店)
+
+10.什么是闭包，闭包有什么好处和坏处？(趣店)
+
+11.ul内有多个li，ul有id，li有class，如何实现点击每个li标签alert出他的class？(趣店)
+
+12.实现一个表单内输入银行卡号，每四个数字加一个空格，要怎么实现判断？(趣店)
+
+13.position有哪些属性，要在fixed定位中再加一个fixed定位，但是不以浏览器窗口为标准，需要怎么定位？(美图)
+
+14.对于websocket有什么了解？实现im的功能要怎么实现？(美团)
+全双工通信，实现服务端向客户端推送
+（1）建立在 TCP 协议之上，服务器端的实现比较容易。
+（2）与 HTTP 协议有着良好的兼容性。默认端口也是80和443，并且握手阶段采用 HTTP 协议，因此握手时不容易屏蔽，能通过各种 HTTP 代理服务器。
+（3）数据格式比较轻量，性能开销小，通信高效。
+（4）可以发送文本，也可以发送二进制数据。
+（5）没有同源限制，客户端可以与任意服务器通信。
+（6）协议标识符是ws（如果加密，则为wss），服务器网址就是 URL。
+
+15.TCP为什么要三次握手，两次不行吗？(美团)
+
+16.HTTP如何实现缓存？(有赞，腾讯)
+
+#### 17.cookie，localStorage，sessionStorage有什么区别？ (美图)
+
+18.解释一下盒模型？如何改变盒模型？box-sizing(美图，美团)
+
+19.在什么情况下会使用promise？每次promise.then()所返回的对象是一样的还是不一样？(头条)
+
+20.前序，中序，后序，遍历二叉树 (美团)
+
+21.解释一下XSS和CSRF，并解释如何预防？(美团)
+
+22.HTTP和HTTPS的区别 (有赞)
+
+#### 23.如何实现垂直水平居中？(高频) (趣店，美团)
+
+24.react为什么要写setState（不要直接改变state 直接对组件state中的属性赋值将不会触发DOM更新，因为React并不知道state被改变了 ）
+
+25.call和apply用过吗，用途是什么？他们有什么区别 (趣店)
+
+26.怎么清除浮动？什么是BFC,怎么实现？(头条，网宿)
+
+27.http有哪些请求头？前后端交互的数据类型有哪些？post和get的区别是什么？(好像是post服务器要。。。)(美团)
+
+28.解释一下node的路由 (星网锐捷)
+
+29.如何消除display: inline-block 的间距？(头条)
+
+30.html有哪些语义化标签？html有哪些是行内标签，哪些是块级标签？(网宿，美图)
+
+31.解释一下堆排序 (美图)
+
+32.你如何理解前后端分离 (趣店)
+
+33.HTTP有哪些状态码？301,302,304,401,403,504 (趣店，美图)
+
+34.你怎么实现响应式布局？(趣店，网宿)
+
+35.解释一下js的原型链 (网宿)
+
+36.页面优化有哪些方法？
+
+37.样式的优先级？ (美图) 伪选择器有了解吗？(头条)
+
+38.jquery有什么方法？(网宿) 你怎么实现 document.ready?(美团)
+
+CSS类
+$("p").addClass("selected");    　　//为p元素加上 'selected' 类
+$("p").removeClass("selected");    //从p元素中删除 'selected' 类
+$("p").toggleClass("selected");    //如果存在就删除,否则就添加
+CSS操作
+$("p").css("color");          //访问查看p元素的color属性
+$("p").css("color","red");    //设置p元素的color属性为red
+$("p").css({ "color": "red", "background": "yellow" });    //设置p元素的color为red，background属性为yellow（设置多个属性要用{}字典形式）
+HTML代码/文本/值
+$('p').html();    　　　　　　　　　　 //返回p元素的html内容
+$("p").html("Hello <b>nick</b>!");  //设置p元素的html内容
+$('p').text();    　　　　　　　　　　 //返回p元素的文本内容
+$("p").text("nick");    　　　　　　　//设置p元素的文本内容
+$("input").val();    　　　　　　　　 //获取文本框中的值
+$("input").val("nick");     　　　　 //设置文本框中的内容
+
+39.手写一个模态框（美团）
+
+40.sass的mixin (头条)
+
+41.webpack用过哪些功能，如何打包js？过程是什么？
+
+42.如何判断是不是数组，有哪些方法（趣店）
+  1.可以使用 instanceof操作符
+  var arrayStr=new Array("1","2","3","4","5");    
+  alert(arrayStr instanceof Array);  
+
+  2.function isArray(obj) {      
+      return Object.prototype.toString.call(obj) === '[object Array]';       
+ }
+
+43.数组去重？(美团)
+
+44.如何操作cookie，如何禁用cookie（星网锐捷）
+
+45.对排序算法有什么了解吗？速度最快的是什么？(腾讯)
+
+46.jquery和react有什么区别（美团，腾讯）
+
+47.你怎么理解模块化？(腾讯)
+
+48.absolute和relative的区别是什么？(腾讯，美图，有赞)
+
+49.在移动端如何实现1px的线？（腾讯）
+
+50.你怎么实现设备自适应？对于rem有了解吗？（腾讯）
+
+51.node有了解吗？koa和express知道吗？用过node写过什么？sockect.io 是用什么实现的？只是用websocket吗？不用websocket的话要怎么实现？你说长轮询，有听过短轮询吗？（腾讯）
+
+#### 长轮询：
+http 长轮询是server 收到请求后如果有数据，立刻响应请求；如果没有数据 就会 停留 一段时间，这段时间内，如果 server 请求的数据到达（如查询数据库或数据的逻辑处理完成），就会立刻响应；如果这段时间过后，还没有数据到达，则以空数据的形式响应http请求；若浏览器收到的数据为空，会再次发送同样的http请求到server；
+#### 短轮询：
+http 短轮询是 server 收到请求 不管是否有数据到达都直接响应http 请求；如果浏览器收到的数据为空，则隔一段时间，浏览器又会发送相同的http请求到server 以获取数据响应；
+
+#### http 长轮询 和 短轮询的异同
+1）相同点：当server 的数据不可达时，基于http长轮询和短轮询 的http请求，都会 停留一段时间；
+2）不同点：http长轮询是在服务器端的停留，而http 短轮询是在 浏览器端的停留；
+
+#### http和websocket的长连接区别
+HTTP1.1通过使用Connection:keep-alive进行长连接，HTTP 1.1默认进行持久连接。在一次 TCP 连接中可以完成多个 HTTP 请求，但是对每个请求仍然要单独发 header，Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。这种长连接是一种“伪链接”
+websocket的长连接，是一个真的全双工。长连接第一次tcp链路建立之后，后续数据可以双方都进行发送，不需要发送请求头。
+
+keep-alive双方并没有建立正真的连接会话，服务端可以在任何一次请求完成后关闭。WebSocket 它本身就规定了是正真的、双工的长连接，两边都必须要维持住连接的状态。
+52.实现表格你会怎么实现？用td还是div？（腾讯）
+
+53.一个正方形由四个不同颜色的三角形拼接，怎么实现？（腾讯）
+
+54.你对于css更感兴趣还是js？觉得自己哪方面比较厉害？(美团，腾讯)
+
+55.animation，transform，canvas实现动画对比起来有什么优缺点？（腾讯）
+
+56.对于一个复杂的页面，你会怎么样去实现？
+
+ -->
+
       
     </div>
     
